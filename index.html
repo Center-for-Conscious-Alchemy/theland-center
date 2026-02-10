@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Land at Balsam Branch | A Place for Shared Healing</title>
+    <meta name="description" content="The Land cultivates connection and whole-person well-being by bringing people together for shared healing experiences rooted in community, reflection, and care for the land.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --earth-deep: #3d3d3d;
+            --forest: #4a5d52;
+            --forest-light: #6b7f72;
+            --sage: #a8b5a0;
+            --clay: #9e7b5a;
+            --clay-light: #c4a77d;
+            --warmth: #d4a574;
+            --cream: #faf8f5;
+            --cream-warm: #f5f0e8;
+            --stone: #e8e4dd;
+            --charcoal: #2d2d2d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            font-weight: 400;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.75;
+            font-size: 17px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.25rem 0;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(250, 248, 245, 0.97);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--earth-deep);
+        }
+
+        .logo-text {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .logo-text span {
+            display: block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--forest-light);
+            margin-top: 0.15rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--earth-deep);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--clay);
+        }
+
+        .nav-cta {
+            background: var(--forest);
+            color: var(--cream) !important;
+            padding: 0.65rem 1.25rem;
+            border-radius: 3px;
+            transition: background 0.2s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--forest-light) !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 22px;
+            height: 2px;
+            background: var(--earth-deep);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--cream-warm);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.4;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(168, 181, 160, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 80%, rgba(196, 167, 125, 0.2) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: clamp(3rem, 8vw, 6rem);
+            align-items: center;
+            padding: 10rem 0 6rem;
+        }
+
+        .hero-text {
+            max-width: 560px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--forest-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            color: var(--earth-deep);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero h1 em {
+            color: var(--clay);
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--earth-deep);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.75rem;
+            background: var(--forest);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            border-radius: 3px;
+            transition: all 0.25s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--forest-light);
+            transform: translateY(-1px);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-height: 550px;
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            padding: 1.25rem 1.5rem;
+            border-radius: 4px;
+        }
+
+        .hero-caption p {
+            font-size: 0.95rem;
+            color: var(--earth-deep);
+            font-style: italic;
+            margin: 0;
+        }
+
+        .hero-caption cite {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            font-style: normal;
+            margin-top: 0.35rem;
+            display: block;
+        }
+
+        /* Section styling */
+        section {
+            padding: clamp(4rem, 10vw, 7rem) 0;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--clay);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            color: var(--earth-deep);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-intro {
+            font-size: 1.1rem;
+            color: var(--earth-deep);
+            opacity: 0.8;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 6vw, 5rem);
+            align-items: center;
+        }
+
+        .about-content p {
+            margin-bottom: 1.25rem;
+            color: var(--earth-deep);
+        }
+
+        .about-content p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .highlight-quote {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--forest);
+            border-left: 3px solid var(--clay-light);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Values Section */
+        .values {
+            background: var(--forest);
+            color: var(--cream);
+        }
+
+        .values .section-label {
+            color: var(--clay-light);
+        }
+
+        .values .section-title {
+            color: var(--cream);
+        }
+
+        .values .section-intro {
+            color: rgba(250, 248, 245, 0.8);
+        }
+
+        .values-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+
+        .value-number {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2rem;
+            color: var(--clay-light);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .value-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--cream);
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            color: rgba(250, 248, 245, 0.75);
+            line-height: 1.7;
+        }
+
+        /* Place Section */
+        .place {
+            background: var(--cream-warm);
+        }
+
+        .place-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .place-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .place-feature {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.75rem;
+            background: var(--cream);
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .place-feature-icon {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--stone);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--forest);
+        }
+
+        .place-feature-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .place-feature h4 {
+            font-size: 1.05rem;
+            color: var(--earth-deep);
+            margin-bottom: 0.35rem;
+        }
+
+        .place-feature p {
+            font-size: 0.9rem;
+            color: var(--earth-deep);
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        .place-images {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+            height: 350px;
+        }
+
+        .place-image {
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .place-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .place-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Experiences Section */
+        .experiences {
+            background: var(--cream);
+        }
+
+        .experiences-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: end;
+            margin-bottom: 3.5rem;
+        }
+
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .experience-card {
+            background: var(--cream-warm);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .experience-image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .experience-card:hover .experience-image img {
+            transform: scale(1.05);
+        }
+
+        .experience-content {
+            padding: 1.5rem;
+        }
+
+        .experience-content h4 {
+            font-size: 1.1rem;
+            color: var(--earth-deep);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-content p {
+            font-size: 0.9rem;
+            color: var(--earth-deep);
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        /* Who Section */
+        .who {
+            background: var(--stone);
+        }
+
+        .who-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 6vw, 5rem);
+            align-items: center;
+        }
+
+        .who-text h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            color: var(--earth-deep);
+            margin-bottom: 1.5rem;
+        }
+
+        .who-text p {
+            color: var(--earth-deep);
+            margin-bottom: 1rem;
+        }
+
+        .audience-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .audience-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: var(--earth-deep);
+        }
+
+        .audience-list li:last-child {
+            border-bottom: none;
+        }
+
+        .audience-list svg {
+            width: 18px;
+            height: 18px;
+            color: var(--clay);
+            flex-shrink: 0;
+        }
+
+        .who-image {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .who-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Team Section */
+        .team {
+            background: var(--cream);
+        }
+
+        .team-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.25rem;
+            border: 4px solid var(--stone);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+            color: var(--earth-deep);
+        }
+
+        .team-role {
+            color: var(--clay);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-bio {
+            font-size: 0.9rem;
+            color: var(--earth-deep);
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--forest);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta .section-label {
+            color: var(--clay-light);
+        }
+
+        .cta h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            color: var(--cream);
+            margin-bottom: 1.25rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--clay);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            border-radius: 3px;
+            transition: all 0.25s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--clay-light);
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--earth-deep);
+            color: var(--cream);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: rgba(250, 248, 245, 0.65);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            max-width: 320px;
+            line-height: 1.7;
+        }
+
+        .footer-links h5 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--clay-light);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.65rem;
+        }
+
+        .footer-links a {
+            color: rgba(250, 248, 245, 0.65);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--clay-light);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(250, 248, 245, 0.45);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .about-grid,
+            .who-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image,
+            .who-image {
+                order: -1;
+            }
+
+            .values-grid,
+            .experiences-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .place-features {
+                grid-template-columns: 1fr;
+            }
+
+            .place-images {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .place-image {
+                height: 250px;
+            }
+
+            .experiences-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="logo">
+                    <div class="logo-text">
+                        The Land
+                        <span>at Balsam Branch</span>
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#place">The Place</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#connect" class="nav-cta">Connect</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <span class="hero-label">A Place for Shared Healing</span>
+                    <h1>Where people come together to <em>reconnect</em></h1>
+                    <p class="hero-description">The Land cultivates connection and whole-person well-being by bringing people together for shared healing experiences rooted in community, reflection, and care for the land.</p>
+                    <a href="#about" class="hero-cta">Learn Our Story</a>
+                </div>
+                <div class="hero-visual fade-in stagger-1">
+                    <div class="hero-image-frame">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Morning mist over a peaceful lake surrounded by forest">
+                        <div class="hero-caption">
+                            <p>"Healing happens in relationship with people, community, and place."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <span class="section-label">Our Purpose</span>
+                    <h2 class="section-title">Mending the relational fabric of community</h2>
+                    <p>Rising disconnection, burnout, and isolation are eroding individual well-being and weakening the social fabric, particularly among those who serve others. Clinical care alone cannot address this loss of belonging, meaning, and connection to place.</p>
+                    <p class="highlight-quote">The Land exists to create spaces where people can reconnect with themselves, one another, and place.</p>
+                    <p>Founded by mental health practitioners who understand that healing happens in community, The Land brings people together for reflective, place-based experiences that restore connection to self, others, and purpose.</p>
+                </div>
+                <div class="about-image fade-in stagger-1">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80" alt="Group of people gathered together outdoors">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <div class="values-header fade-in">
+                <span class="section-label">What We Believe</span>
+                <h2 class="section-title">Three truths guide our work</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card fade-in stagger-1">
+                    <div class="value-number">01</div>
+                    <h3>Healing is shared</h3>
+                    <p>Restoration happens in relationship with people, community, and place, not in isolation. We heal together.</p>
+                </div>
+                <div class="value-card fade-in stagger-2">
+                    <div class="value-number">02</div>
+                    <h3>Connection is infrastructure</h3>
+                    <p>Belonging and relational well-being are foundational to healthy families, workplaces, and civic life.</p>
+                </div>
+                <div class="value-card fade-in stagger-3">
+                    <div class="value-number">03</div>
+                    <h3>Caregivers deserve renewal</h3>
+                    <p>Those who serve others deserve spaces for their own restoration. Supporting them strengthens entire communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Place Section -->
+    <section class="place" id="place">
+        <div class="container">
+            <div class="place-header fade-in">
+                <span class="section-label">The Place</span>
+                <h2 class="section-title">135 acres in the Wisconsin woods</h2>
+                <p class="section-intro">Set along the Balsam Branch River, one hour northeast of the Twin Cities. A place for disconnection and connection. For inner and outer exploration.</p>
+            </div>
+            <div class="place-features">
+                <div class="place-feature fade-in stagger-1">
+                    <div class="place-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Lake & River Access</h4>
+                        <p>Private shoreline along Ox Lake and the meandering Balsam Branch River for reflection and renewal.</p>
+                    </div>
+                </div>
+                <div class="place-feature fade-in stagger-2">
+                    <div class="place-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 12h4l3-9 4 18 3-9h4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Year-Round Programming</h4>
+                        <p>Experiences designed with the seasons and natural rhythms of this land, from summer gatherings to winter retreats.</p>
+                    </div>
+                </div>
+                <div class="place-feature fade-in stagger-1">
+                    <div class="place-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Gathering & Sleeping Spaces</h4>
+                        <p>A commons lodge, private cabins, and platform tents designed for comfort and community.</p>
+                    </div>
+                </div>
+                <div class="place-feature fade-in stagger-2">
+                    <div class="place-feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>60 Minutes from MSP</h4>
+                        <p>Close enough to access, far enough to truly step away. Easy reach from the Twin Cities and airport.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="place-images">
+                <div class="place-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80" alt="Sunlight filtering through forest trees">
+                </div>
+                <div class="place-image fade-in stagger-1">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Peaceful lake at dawn">
+                </div>
+                <div class="place-image fade-in stagger-2">
+                    <img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?w=400&q=80" alt="Autumn trail through woods">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section class="experiences" id="experiences">
+        <div class="container">
+            <div class="experiences-header">
+                <div class="fade-in">
+                    <span class="section-label">Experiences</span>
+                    <h2 class="section-title">Place-based gatherings for renewal</h2>
+                </div>
+                <p class="section-intro fade-in stagger-1">Our programming fosters reflection, belonging, and integration into daily life. Each experience is designed to strengthen your capacity to show up for yourself and others.</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-card fade-in stagger-1">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="Person in quiet reflection">
+                    </div>
+                    <div class="experience-content">
+                        <h4>Reflective Retreats</h4>
+                        <p>Multi-day experiences combining solitude, guided practice, and communal meals for deep restoration.</p>
+                    </div>
+                </div>
+                <div class="experience-card fade-in stagger-2">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=500&q=80" alt="Small group in conversation">
+                    </div>
+                    <div class="experience-content">
+                        <h4>Community Gatherings</h4>
+                        <p>Seasonal events that bring people together around shared purpose, story, and connection to place.</p>
+                    </div>
+                </div>
+                <div class="experience-card fade-in stagger-3">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=80" alt="Mind-body practice outdoors">
+                    </div>
+                    <div class="experience-content">
+                        <h4>Therapeutic Programs</h4>
+                        <p>Integrative wellness experiences including KAP, breathwork, and mind-body modalities in a supportive setting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Section -->
+    <section class="who">
+        <div class="container">
+            <div class="who-content">
+                <div class="who-text fade-in">
+                    <span class="section-label">Who We Serve</span>
+                    <h2>For those who hold communities together</h2>
+                    <p>We prioritize those who serve others, people who often lack spaces for their own restoration. By supporting caregivers and public servants, The Land strengthens the relational infrastructure that allows communities to heal and flourish.</p>
+                    <ul class="audience-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Educators and healthcare workers
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Social workers and nonprofit professionals
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Veterans and first responders
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                            Spiritual leaders and community organizers
+                        </li>
+                    </ul>
+                </div>
+                <div class="who-image fade-in stagger-1">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=700&q=80" alt="Healthcare worker taking a moment of reflection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="team-header fade-in">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">Guided by experience and care</h2>
+                <p class="section-intro">Founded and led by mental health practitioners and community caregivers who understand that healing happens in relationship.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in stagger-1">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" alt="Susan Borden">
+                    </div>
+                    <h4>Susan Borden</h4>
+                    <div class="team-role">Founder</div>
+                    <p class="team-bio">Psychiatric nurse practitioner with deep expertise in integrative mental health and therapeutic approaches to healing.</p>
+                </div>
+                <div class="team-card fade-in stagger-2">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Cheri Keepers">
+                    </div>
+                    <h4>Cheri Keepers</h4>
+                    <div class="team-role">Executive Director</div>
+                    <p class="team-bio">Decades of experience leading wilderness retreats. Certified yoga instructor and therapeutic program facilitator.</p>
+                </div>
+                <div class="team-card fade-in stagger-3">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Steve Bunge">
+                    </div>
+                    <h4>Steve Bunge</h4>
+                    <div class="team-role">Finance Director</div>
+                    <p class="team-bio">Finance and operational leader combining analytical rigor with relational wisdom to support our mission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="connect">
+        <div class="container">
+            <div class="cta-inner fade-in">
+                <span class="section-label">Connect</span>
+                <h2>Let's start a conversation</h2>
+                <p>Whether you're interested in attending a gathering, exploring partnership, or learning more about our vision, we would love to hear from you.</p>
+                <a href="mailto:hello@thelandatbalsambranch.org" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: var(--cream);">
+                        <div class="logo-text">
+                            The Land
+                            <span style="color: var(--clay-light);">at Balsam Branch</span>
+                        </div>
+                    </a>
+                    <p>A place and practice for shared healing in a time of growing isolation and burnout. Where people reconnect with themselves, one another, and purpose.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#place">The Place</a></li>
+                        <li><a href="#experiences">Experiences</a></li>
+                        <li><a href="#team">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Connect</h5>
+                    <ul>
+                        <li><a href="mailto:hello@thelandatbalsambranch.org">Email</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 The Land at Balsam Branch. All rights reserved.</span>
+                <span>Wisconsin</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
